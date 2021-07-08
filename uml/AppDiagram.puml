@@ -1,0 +1,102 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App{
+    main()
+    start()
+}
+
+class AppController{
+    - mainList: ArrayList<List>
+    - listSelected: ChoiceBox
+    - taskSelected: ChoiceBox
+    - listScreen: TreeView<String>
+    - initialize()
+
+    + menuButtonPressed(actionEvent: ActionEvent)
+    + taskCompletedButtonPressed(actionEvent: ActionEvent)
+    + showAllTasksSelected(actionEvent: ActionEvent)
+    + showCompletedTasksSelected(actionEvent: ActionEvent)
+    + showUncompletedTasksSelected(actionEvent: ActionEvent)
+
+}
+
+class List{
+    - title: String
+    - taskList: ArrayList<Task>
+
+    + getTitle(): String
+    + setTitle(title: String)
+    + addTask(dueDate: String, description: String)
+    + getTask(index: int): Task
+}
+
+class menuController{
+
+    - editTitle: boolean
+    - removeTask: boolean
+    - updateList: ChoiceBox
+    - updateTitleName: TextField
+    - removeTaskSelected: ChoiceBox
+    - updateListUserMessage: TextArea
+    - newTitleName: TextField
+    - addListUserMessage: TextArea
+    - ETSelectedList: ChoiceBox
+    - ETSelectedTask: ChoiceBox
+    - editDueDate: boolean
+    - ETSelectedDate: DatePicker
+    - editDescription: boolean
+    - ETEditedDescription: TextField
+    - ETUserMessage: TextArea
+    - ATSelectedList: ChoiceBox
+    - ATSelectedDate: DatePicker
+    - ATEnteredDescription: TextField
+    - ATUserMessage: TextArea
+    - singleListInsert: boolean
+    - multipleListInsert: boolean
+    - ILFilePath: TextField
+    - ILUserMessage: TextArea
+    - saveOneList: boolean
+    - saveAllList: boolean
+    - SLFilePath: TextField
+    - SLSelectedList: ChoiceBox
+    - SLUserMessage: TextArea
+    - initialize()
+
+    + okButtonPressed(actionEvent: ActionEvent)
+    + findList(name: String)
+    + editTitleChecked(actionEvent: ActionEvent)
+    + removeTaskChecked(actionEvent: ActionEvent)
+    + updateListButtonPressed(actionEvent: ActionEvent)
+    + addListButtonPressed(actionEvent: ActionEvent)
+    + editDescriptionChecked(actionEvent: ActionEvent)
+    + editDueDateChecked(actionEvent: ActionEvent)
+    + updateTaskButtonPressed(actionEvent: ActionEvent)
+    + addTaskButtonPressed(actionEvent: ActionEvent)
+    + singleListInsertedChecked(actionEvent: ActionEvent)
+    + multipleListInsertedChecked(actionEvent: ActionEvent)
+    + scanListButtonPressed(actionEvent: ActionEvent)
+    + saveOneListChecked(actionEvent: ActionEvent)
+    + saveAllListChecked(actionEvent: ActionEvent)
+    + saveListButtonPressed(actionEvent: ActionEvent)
+}
+
+class Task{
+    - dueDate: String
+    - description: String
+    - completed: boolean
+
+    + getDueDate(): String
+    + setDueDate(dueDate: String)
+    + getDescription(): String
+    + setDescription(description: String)
+    + getCompleted(): boolean
+    + setCompleted(completed: boolean)
+}
+
+javafx.Application <|-- App
+
+App -  AppController
+AppController - menuController
+List - Task
+@enduml
