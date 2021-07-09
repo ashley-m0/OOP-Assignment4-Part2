@@ -5,6 +5,8 @@ package ucf.assignments;
  *  Copyright 2021 Ashley Mojica
  */
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,52 +14,41 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
 public class AppController {
 
-    private ArrayList<List>  mainList = new ArrayList<>();
+    private List  mainList = new List();
 
-    @FXML
-    private ChoiceBox ListSelected;
-    @FXML
-    private ChoiceBox TaskSelected;
-    @FXML
-    private TreeView<String> listScreen;
+    @FXML private ChoiceBox TaskSelected;
+    @FXML private TableView<Task> taskTable;
+    @FXML private TableColumn<Task, String> completedColumn;
+    @FXML private TableColumn<Task, LocalDate> dueDateColumn;
+    @FXML private TableColumn<Task, String> descriptionColumn;
 
-    @FXML
-    private void initialize(){
-        //just to show what the app is going to look like
-        TreeItem<String> root = new TreeItem<String>("Lists:");
-        TreeItem<String> list1 = new TreeItem<String>("List 1 Name:");
-        TreeItem<String> list2 = new TreeItem<String>("List 2 Name:");
+    @FXML private void initialize(){
+        completedColumn.setCellValueFactory(new PropertyValueFactory<Task, String>("completed"));
+        dueDateColumn.setCellValueFactory(new PropertyValueFactory<Task, LocalDate>("dueDate"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<Task, String>("description"));
 
-        list1.getChildren().add(new TreeItem<>("Completed - Due Date - Description (Task 1)"));
-        list1.getChildren().add(new TreeItem<>("Uncompleted - Due Date - Description (Task 2)"));
+        taskTable.setItems(getTaskInfo());
+    }
 
-        list2.getChildren().add(new TreeItem<>("Completed - Due Date - Description (Task 1)"));
-        list2.getChildren().add(new TreeItem<>("Uncompleted - Due Date - Description (Task 2)"));
+    public ObservableList<Task> getTaskInfo() {
+        ObservableList<Task> listInfo = FXCollections.observableArrayList();
 
-        root.getChildren().add(list1);
-        root.getChildren().add(list2);
-        listScreen.setRoot(root);
+        for(int i = 0; i < mainList.getTaskListSize(); i++){
+            listInfo.add(mainList.getTask(i));
+        }
 
-        //for loop that iterates for the length of main ArrayList
-            //get list name
-            //create a string TreeItem with the list name
-
-            //for loop that iterates for the length of the task ArrayList
-                //get completed, due date, and description
-                //compile info into a string
-                //create a treeItem with the string and add it as a child of the list
-
-            //add list item to the root item
-
+        return listInfo;
     }
 
     public void menuButtonPressed(ActionEvent actionEvent) throws IOException {

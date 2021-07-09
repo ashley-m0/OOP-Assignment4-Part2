@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -11,62 +12,66 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.MenuController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="608.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.MenuController">
   <tabs>
       <Tab text="Edit Tasks">
          <content>
             <GridPane>
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="21.0" />
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="79.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="80.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints minHeight="-Infinity" percentHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="-Infinity" percentHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                  <TextField fx:id="ETEditedDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="ETEditedDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <CheckBox mnemonicParsing="false" onAction="#editDescriptionChecked" text="Edit Description" GridPane.rowIndex="4">
+                  <CheckBox mnemonicParsing="false" onAction="#editDescriptionChecked" text="Edit Description" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" onAction="#editDateChecked" text="Edit Due Date" GridPane.rowIndex="2">
+                  <CheckBox mnemonicParsing="false" onAction="#editDateChecked" text="Edit Due Date" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </GridPane.margin>
                   </CheckBox>
-                  <DatePicker fx:id="ETSelectedDate" prefHeight="25.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <ChoiceBox fx:id="ETSelectedTask" prefHeight="25.0" prefWidth="546.0" GridPane.columnIndex="1">
+                  <DatePicker fx:id="ETSelectedDate" prefHeight="25.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <ChoiceBox fx:id="ETSelectedTask" prefHeight="25.0" prefWidth="546.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <Label text="Select Task:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <Label text="Select Task:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <children>
                         <Button layoutX="441.0" layoutY="8.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
-                        <Button layoutX="345.0" layoutY="8.0" mnemonicParsing="false" onAction="#updateTaskButtonPressed" text="Update Task" />
+                        <Button layoutX="349.0" layoutY="9.0" mnemonicParsing="false" onAction="#updateTaskButtonPressed" text="Update Task" />
                         <TextArea fx:id="ETUserMessage" layoutX="81.0" layoutY="2.0" prefHeight="28.0" prefWidth="250.0" />
                      </children>
                   </AnchorPane>
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" />
                </children>
             </GridPane>
          </content>
@@ -79,36 +84,71 @@
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="80.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="55.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <DatePicker fx:id="ATSelectedDate" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
-                  <TextField fx:id="ATEnteredDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="ATSelectedDate" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <TextField fx:id="ATEnteredDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Enter Due Date:" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                  <Label text="Enter Due Date:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </GridPane.margin>
                   </Label>
-                  <Label text="Enter Description:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Label text="Enter Description:" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </GridPane.margin>
                   </Label>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <children>
-                        <Button layoutX="447.0" layoutY="15.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
-                        <Button layoutX="367.0" layoutY="15.0" mnemonicParsing="false" onAction="#addTaskButtonPressed" text="Add Task" />
-                        <TextArea fx:id="ATUserMessage" layoutX="105.0" layoutY="9.0" prefHeight="26.0" prefWidth="250.0" />
+                        <Button layoutX="439.0" layoutY="15.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
+                        <Button layoutX="362.0" layoutY="15.0" mnemonicParsing="false" onAction="#addTaskButtonPressed" text="Add Task" />
+                        <TextArea fx:id="ATUserMessage" layoutX="100.0" layoutY="9.0" prefHeight="26.0" prefWidth="250.0" />
+                     </children>
+                  </AnchorPane>
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Remove Task">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="80.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Label text="Select Task: " GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <ChoiceBox fx:id="removeTask" prefHeight="25.0" prefWidth="508.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin>
+                  </ChoiceBox>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Button layoutX="439.0" layoutY="15.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
+                        <Button layoutX="345.0" layoutY="15.0" mnemonicParsing="false" onAction="#removeTaskButtonPressed" text="Remove Task" />
+                        <TextArea fx:id="RTUserMessage" layoutX="86.0" layoutY="9.0" prefHeight="27.0" prefWidth="250.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -123,25 +163,27 @@
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="70.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="65.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="70.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="ILFilePath" prefHeight="47.0" prefWidth="487.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                  <TextField fx:id="ILFilePath" prefHeight="47.0" prefWidth="487.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Enter Absolute Path of File:" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label text="Enter Absolute Path of File:" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
                         <Button layoutX="386.0" layoutY="15.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
-                        <Button layoutX="287.0" layoutY="15.0" mnemonicParsing="false" onAction="#scanListButtonPressed" text="Update List(s)" />
-                        <TextArea fx:id="ILUserMessage" layoutX="26.0" layoutY="9.0" prefHeight="27.0" prefWidth="250.0" />
+                        <Button layoutX="297.0" layoutY="15.0" mnemonicParsing="false" onAction="#scanListButtonPressed" text="Update List" />
+                        <TextArea fx:id="ILUserMessage" layoutX="32.0" layoutY="9.0" prefHeight="27.0" prefWidth="250.0" />
                      </children>
                   </AnchorPane>
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" />
                </children>
             </GridPane>
          </content>
@@ -154,25 +196,192 @@
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="70.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="75.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="SLFilePath" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                  <TextField fx:id="SLFilePath" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Enter Absolute Path of File:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label text="Enter Absolute Path of File:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Button layoutX="298.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveListButtonPressed" text="Save List(s)" />
+                        <Button layoutX="311.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveListButtonPressed" text="Save List" />
                         <Button layoutX="386.0" layoutY="11.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
-                        <TextArea fx:id="SLUserMessage" layoutX="31.0" layoutY="5.0" prefHeight="27.0" prefWidth="250.0" />
+                        <TextArea fx:id="SLUserMessage" layoutX="44.0" layoutY="5.0" prefHeight="27.0" prefWidth="250.0" />
                      </children>
                   </AnchorPane>
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Help">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="70.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="How To Use The ToDo App:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Accordion GridPane.rowIndex="2">
+                    <panes>
+                      <TitledPane animated="false" text="How do you edit a task?">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="1. Click on the &quot;Edit Tasks&quot; tab." />
+                                    <Label prefHeight="35.0" prefWidth="274.0" text="2. Select the task you want to edit." GridPane.rowIndex="1" />
+                                    <Label text="3. If you want to edit the due date:" GridPane.rowIndex="2" />
+                                    <Label text="  a.) Check the &quot;Edit Due Date&quot; box." GridPane.rowIndex="3" />
+                                    <Label prefHeight="12.0" prefWidth="275.0" text="  b.) Select the new due date." GridPane.rowIndex="4" />
+                                    <Label prefHeight="15.0" prefWidth="308.0" text="4. If you want to edit the description: " GridPane.rowIndex="5" />
+                                    <Label prefHeight="17.0" prefWidth="253.0" text="  a.) Check the &quot;Edit Description&quot; box." GridPane.rowIndex="6" />
+                                    <Label prefHeight="40.0" prefWidth="369.0" text="  b.) Type the new description in the text field. " GridPane.rowIndex="7" />
+                                    <Label prefHeight="17.0" prefWidth="604.0" text="5. Click on the &quot;Update Task&quot; button (you will be prompted if the update was successful)." GridPane.rowIndex="8" />
+                                    <Label text="6. Click on the &quot;OK&quot; button to exit menu." GridPane.rowIndex="9" />
+                                 </children>
+                              </GridPane>
+                           </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="How do you add a task?">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="8.0" prefWidth="466.0" text="1. Click on the &quot;Add Tasks&quot; tab." />
+                                    <Label prefHeight="17.0" prefWidth="345.0" text="2. Enter in the due date and the description of the task." GridPane.rowIndex="1" />
+                                    <Label prefHeight="17.0" prefWidth="485.0" text="3. Click on the &quot;Add Task&quot; button (you will be prompted if the task was successfully added)." GridPane.rowIndex="2" />
+                                    <Label text="4. Click the &quot;OK&quot; button to exit menu." GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </content>
+                      </TitledPane>
+                      <TitledPane animated="false" prefHeight="333.0" prefWidth="621.0" text="How do you remove a task?">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="460.0" text="1. Click on the &quot;Remove Task&quot; tab. " />
+                                    <Label text="2. Select the task you would like to remove in the dropdown menu.  " GridPane.rowIndex="1" />
+                                    <Label prefHeight="17.0" prefWidth="551.0" text="3. Click on the &quot;Remove Task&quot; button (you will be prompted if the task was successfully deleted)." GridPane.rowIndex="2" />
+                                    <Label prefHeight="17.0" prefWidth="520.0" text="4. Click on the &quot;OK&quot; button to exit menu." GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </content>
+                      </TitledPane>
+                        <TitledPane animated="false" prefHeight="316.0" prefWidth="619.0" text="How do you upload a list from an external file?">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="436.0" text="1. Click on the &quot;Insert List from External File&quot; tab." />
+                                    <Label prefHeight="17.0" prefWidth="538.0" text="2. Enter the absolute path of the file with the list information into the text field." GridPane.rowIndex="1" />
+                                    <Label prefHeight="41.0" prefWidth="584.0" text="3. Click on the &quot;Update List&quot; button (you will be prompted if the information was successfully uploaded." GridPane.rowIndex="2" />
+                                    <Label text="4. Click on the &quot;OK&quot; button to exit menu." GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="How do you save a list to an external file?">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="449.0" text="1. Click on the &quot;Save List to External File&quot; tab." />
+                                    <Label prefHeight="17.0" prefWidth="568.0" text="2. Enter the absolute path to the file you wish to upload the list information to in the text field." GridPane.rowIndex="1" />
+                                    <Label prefHeight="17.0" prefWidth="517.0" text="3. Click on the &quot;Save List&quot; button (you will be prompted if the list was successfully uploaded). " GridPane.rowIndex="2" />
+                                    <Label prefHeight="17.0" prefWidth="506.0" text="4. Click on the &quot;OK&quot; button to exit menu. " GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <GridPane GridPane.rowIndex="3">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="85.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
+                           </children>
+                        </AnchorPane>
+                        <Label text="Dedicated to Rey (thanks alot dude) " GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Separator prefWidth="200.0" />
                </children>
             </GridPane>
          </content>

@@ -5,24 +5,26 @@ package ucf.assignments;
  *  Copyright 2021 Ashley Mojica
  */
 
+import java.time.LocalDate;
+
 public class Task {
 
-    private String dueDate;
+    private LocalDate dueDate;
     private String description;
     private boolean completed;
 
-    public Task(String dueDate, String description){
+    public Task(LocalDate dueDate, String description){
         this.dueDate = dueDate;
         this.description = description;
         this.completed = false;
     }
 
     //getter for due date
-    public String getDueDate(){
+    public LocalDate getDueDate(){
         return dueDate;
     }
 
-    public void setDueDate(String dueDate){
+    public void setDueDate(LocalDate dueDate){
         this.dueDate = dueDate;
     }
 
@@ -45,4 +47,5 @@ public class Task {
     public void setCompleted(boolean completed){
         this.completed = completed;
     }
+
 }

@@ -21,11 +21,8 @@ class AppController{
 }
 
 class List{
-    - title: String
     - taskList: ArrayList<Task>
 
-    + getTitle(): String
-    + setTitle(title: String)
     + addTask(dueDate: String, description: String)
     + getTask(index: int): Task
 }

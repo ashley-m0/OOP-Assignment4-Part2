@@ -23,14 +23,10 @@ public class MenuController {
     //Edit Task Tab
         private boolean editDescription;
         private boolean editDueDate;
-        @FXML
-        private ChoiceBox ETSelectedTask;
-        @FXML
-        private DatePicker ETSelectedDate;
-        @FXML
-        private TextField ETEditedDescription;
-        @FXML
-        private TextArea ETUserMessage;
+        @FXML private ChoiceBox ETSelectedTask;
+        @FXML private DatePicker ETSelectedDate;
+        @FXML private TextField ETEditedDescription;
+        @FXML private TextArea ETUserMessage;
 
         public void editDescriptionChecked(ActionEvent actionEvent) {
             //set editDescription to equal true
@@ -55,12 +51,9 @@ public class MenuController {
         }
 
     //Add Task Tab
-        @FXML
-        private DatePicker ATSelectedDate;
-        @FXML
-        private TextField ATEnteredDescription;
-        @FXML
-        private TextArea ATUserMessage;
+        @FXML private DatePicker ATSelectedDate;
+        @FXML private TextField ATEnteredDescription;
+        @FXML private TextArea ATUserMessage;
         public void addTaskButtonPressed(ActionEvent actionEvent) {
             //take in List selected
             //find its index in the ArrayList
@@ -72,20 +65,16 @@ public class MenuController {
         }
 
     //Remove Task
-        @FXML
-        private ChoiceBox removeSelectedTask;
-        @FXML
-        private TextArea RTUserMessage;
+        @FXML private ChoiceBox removeSelectedTask;
+        @FXML private TextArea RTUserMessage;
         public void removeTaskButtonPressed(ActionEvent actionEvent){
 
         }
 
 
     //Insert List from External File Tab
-        @FXML
-        private TextField ILFilePath;
-        @FXML
-        private TextArea ILUserMessage;
+        @FXML private TextField ILFilePath;
+        @FXML private TextArea ILUserMessage;
         public void scanListButtonPressed(ActionEvent actionEvent) {
             //open file
             //while the nextLine does not equal null
@@ -98,12 +87,8 @@ public class MenuController {
         }
 
     //Save List to External File Tab
-        @FXML
-        private TextField SLFilePath;
-        @FXML
-        private ChoiceBox SLSelectedList;
-        @FXML
-        private TextArea SLUserMessage;
+        @FXML private TextField SLFilePath;
+        @FXML private TextArea SLUserMessage;
         public void saveListButtonPressed(ActionEvent actionEvent) {
             //open file
             //iterate through List
