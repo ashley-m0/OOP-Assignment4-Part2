@@ -17,8 +17,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class MenuController {
+
+    //transfer mainList
+
 
     //Edit Task Tab
         private boolean editDescription;
@@ -55,9 +59,11 @@ public class MenuController {
         @FXML private TextField ATEnteredDescription;
         @FXML private TextArea ATUserMessage;
         public void addTaskButtonPressed(ActionEvent actionEvent) {
-            //take in List selected
-            //find its index in the ArrayList
+            //take in text from textField
+            String newDescription = ATEnteredDescription.getText();
+            LocalDate newDueDate = ATSelectedDate.getValue();
             //search if the task has already present in the selected list
+            int search = mainList
             //if search equals -1 (not found)
                 //create and add task to the List
             //else

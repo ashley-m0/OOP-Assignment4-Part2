@@ -43,11 +43,9 @@ public class AppController {
 
     public ObservableList<Task> getTaskInfo() {
         ObservableList<Task> listInfo = FXCollections.observableArrayList();
-
         for(int i = 0; i < mainList.getTaskListSize(); i++){
             listInfo.add(mainList.getTask(i));
         }
-
         return listInfo;
     }
 
@@ -75,6 +73,8 @@ public class AppController {
 
         //set TreeView's root to the root we made
     }
+
+
 
     public void showCompletedTasksSelected(ActionEvent actionEvent) {
         //initialize root
