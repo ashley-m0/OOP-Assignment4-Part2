@@ -18,93 +18,6 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.MenuController">
   <tabs>
-    <Tab text="Edit List">
-         <content>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" percentWidth="80.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="25.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <CheckBox mnemonicParsing="false" onAction="#editTitleChecked" text="Edit Title" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets left="15.0" />
-                     </GridPane.margin>
-                  </CheckBox>
-                  <Separator prefHeight="16.0" prefWidth="618.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="updateTitleName" prefHeight="51.0" prefWidth="468.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets right="15.0" />
-                     </GridPane.margin>
-                  </TextField>
-                  <ChoiceBox fx:id="updateList" prefHeight="25.0" prefWidth="494.0" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets right="15.0" />
-                     </GridPane.margin>
-                  </ChoiceBox>
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                  <CheckBox mnemonicParsing="false" onAction="#removeTaskChecked" text="Remove Task" GridPane.rowIndex="4">
-                     <GridPane.margin>
-                        <Insets left="15.0" />
-                     </GridPane.margin>
-                  </CheckBox>
-                  <ChoiceBox fx:id="removeTaskSelected" prefHeight="25.0" prefWidth="481.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <GridPane.margin>
-                        <Insets right="15.0" />
-                     </GridPane.margin>
-                  </ChoiceBox>
-                  <Label text="Select List:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                     <children>
-                        <Button layoutX="356.0" layoutY="17.0" mnemonicParsing="false" onAction="#updateListButtonPressed" text="Update List" />
-                        <Button layoutX="447.0" layoutY="17.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
-                        <TextArea fx:id="updateListUserMessage" layoutX="88.0" layoutY="11.0" prefHeight="29.0" prefWidth="250.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </GridPane>
-         </content>
-    </Tab>
-      <Tab text="Add List">
-         <content>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
-                <ColumnConstraints hgrow="SOMETIMES" percentWidth="80.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="65.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Label text="Enter Title:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <TextField fx:id="newTitleName" prefHeight="50.0" prefWidth="499.0" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets right="15.0" />
-                     </GridPane.margin>
-                  </TextField>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <children>
-                        <Button layoutX="447.0" layoutY="14.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
-                        <Button layoutX="373.0" layoutY="14.0" mnemonicParsing="false" onAction="#addListButtonPressed" text="Add List" />
-                        <TextArea fx:id="addListUserMessage" layoutX="105.0" layoutY="8.0" prefHeight="37.0" prefWidth="250.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </GridPane>
-         </content></Tab>
       <Tab text="Edit Tasks">
          <content>
             <GridPane>
@@ -113,48 +26,41 @@
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="79.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="-Infinity" percentHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="35.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-                  <TextField fx:id="ETEditedDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <TextField fx:id="ETEditedDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <CheckBox mnemonicParsing="false" onAction="#editDescriptionChecked" text="Edit Description" GridPane.rowIndex="5">
+                  <CheckBox mnemonicParsing="false" onAction="#editDescriptionChecked" text="Edit Description" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" onAction="#editDateChecked" text="Edit Due Date" GridPane.rowIndex="3">
+                  <CheckBox mnemonicParsing="false" onAction="#editDateChecked" text="Edit Due Date" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <DatePicker fx:id="ETSelectedDate" prefHeight="25.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <ChoiceBox fx:id="ETSelectedList" prefHeight="25.0" prefWidth="561.0" GridPane.columnIndex="1">
+                  <DatePicker fx:id="ETSelectedDate" prefHeight="25.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <ChoiceBox fx:id="ETSelectedTask" prefHeight="25.0" prefWidth="546.0" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox fx:id="ETSelectedTask" prefHeight="25.0" prefWidth="546.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets right="15.0" />
-                     </GridPane.margin>
-                  </ChoiceBox>
-                  <Label text="Select List" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label text="Select Task:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <Label text="Select Task:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
                         <Button layoutX="441.0" layoutY="8.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
                         <Button layoutX="345.0" layoutY="8.0" mnemonicParsing="false" onAction="#updateTaskButtonPressed" text="Update Task" />
@@ -173,45 +79,32 @@
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="80.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="55.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                   <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                  <ChoiceBox fx:id="ATSelectedList" prefHeight="25.0" prefWidth="510.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets right="15.0" />
-                     </GridPane.margin>
-                  </ChoiceBox>
-                  <DatePicker fx:id="ATSelectedDate" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <TextField fx:id="ATEnteredDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="ATSelectedDate" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                  <TextField fx:id="ATEnteredDescription" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Select List:" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Enter Due Date:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Label text="Enter Due Date:" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label text="Enter Description:" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <Label text="Enter Description:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </Label>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
                         <Button layoutX="447.0" layoutY="15.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
                         <Button layoutX="367.0" layoutY="15.0" mnemonicParsing="false" onAction="#addTaskButtonPressed" text="Add Task" />
@@ -231,11 +124,8 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
-                  <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="65.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <TextField fx:id="ILFilePath" prefHeight="47.0" prefWidth="487.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
@@ -243,12 +133,9 @@
                         <Insets right="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                   <Label text="Enter Absolute Path of File:" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <CheckBox mnemonicParsing="false" onAction="#singleListInsertedChecked" text="Single List?" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <CheckBox mnemonicParsing="false" onAction="#multipleListInsertedChecked" text="Multiple Lists?" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                         <Button layoutX="386.0" layoutY="15.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />
                         <Button layoutX="287.0" layoutY="15.0" mnemonicParsing="false" onAction="#scanListButtonPressed" text="Update List(s)" />
@@ -268,11 +155,8 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="75.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <TextField fx:id="SLFilePath" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
@@ -282,19 +166,7 @@
                   </TextField>
                   <Label text="Enter Absolute Path of File:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <CheckBox mnemonicParsing="false" onAction="#saveOneListChecked" text="Save One List?" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets left="15.0" />
-                     </GridPane.margin>
-                  </CheckBox>
-                  <CheckBox mnemonicParsing="false" onAction="#saveAllListChecked" text="Save All Lists?" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets left="15.0" />
-                     </GridPane.margin>
-                  </CheckBox>
-                  <ChoiceBox fx:id="SLSelectedList" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                         <Button layoutX="298.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveListButtonPressed" text="Save List(s)" />
                         <Button layoutX="386.0" layoutY="11.0" mnemonicParsing="false" onAction="#okButtonPressed" text="OK" />

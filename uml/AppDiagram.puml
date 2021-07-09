@@ -8,7 +8,6 @@ class App{
 
 class AppController{
     - mainList: ArrayList<List>
-    - listSelected: ChoiceBox
     - taskSelected: ChoiceBox
     - listScreen: TreeView<String>
     - initialize()
@@ -33,18 +32,6 @@ class List{
 
 class menuController{
 
-    - editTitle: boolean
-    - removeTask: boolean
-    - updateList: ChoiceBox
-    - updateTitleName: TextField
-    - removeTaskSelected: ChoiceBox
-    - updateListUserMessage: TextArea
-    - newTitleName: TextField
-    - addListUserMessage: TextArea
-    - ETSelectedList: ChoiceBox
-    - ETSelectedTask: ChoiceBox
-    - editDueDate: boolean
-    - ETSelectedDate: DatePicker
     - editDescription: boolean
     - ETEditedDescription: TextField
     - ETUserMessage: TextArea
@@ -52,32 +39,19 @@ class menuController{
     - ATSelectedDate: DatePicker
     - ATEnteredDescription: TextField
     - ATUserMessage: TextArea
-    - singleListInsert: boolean
-    - multipleListInsert: boolean
     - ILFilePath: TextField
     - ILUserMessage: TextArea
-    - saveOneList: boolean
-    - saveAllList: boolean
     - SLFilePath: TextField
-    - SLSelectedList: ChoiceBox
     - SLUserMessage: TextArea
     - initialize()
+    - refresh()
 
     + okButtonPressed(actionEvent: ActionEvent)
-    + findList(name: String)
-    + editTitleChecked(actionEvent: ActionEvent)
-    + removeTaskChecked(actionEvent: ActionEvent)
-    + updateListButtonPressed(actionEvent: ActionEvent)
-    + addListButtonPressed(actionEvent: ActionEvent)
     + editDescriptionChecked(actionEvent: ActionEvent)
     + editDueDateChecked(actionEvent: ActionEvent)
     + updateTaskButtonPressed(actionEvent: ActionEvent)
     + addTaskButtonPressed(actionEvent: ActionEvent)
-    + singleListInsertedChecked(actionEvent: ActionEvent)
-    + multipleListInsertedChecked(actionEvent: ActionEvent)
     + scanListButtonPressed(actionEvent: ActionEvent)
-    + saveOneListChecked(actionEvent: ActionEvent)
-    + saveAllListChecked(actionEvent: ActionEvent)
     + saveListButtonPressed(actionEvent: ActionEvent)
 }
 
