@@ -10,24 +10,13 @@ import java.util.ArrayList;
 
 public class List {
 
-    private ArrayList<Task> taskList;
+    private ArrayList<Task> taskList = new ArrayList<>();
 
-    public boolean addTask(LocalDate dueDate, String description){
-        //initialize the boolean statement for whether the task was successfully uploaded
-        //set to false to take care of the chance that the task already exists
-        boolean addSuccessful = false;
-        //search if the task has already been created and put result in a int variable
-        int taskIndex = findTask(description);
-        //if search variable equals -1
-        if(taskIndex == -1) {
-            //create new task variable from input information
-            Task newTask = new Task(dueDate, description);
-            //add task to ArrayList
-            taskList.add(newTask);
-            //return that the task was successfully added(true = successful add)
-            addSuccessful = true;
-        }
-        return addSuccessful;
+    public void addTask(LocalDate dueDate, String description){
+        //create new task variable from input information
+        Task newTask = new Task(dueDate, description);
+        //add task to ArrayList
+        taskList.add(newTask);
     }
 
     public Task getTask(int index){
@@ -53,5 +42,9 @@ public class List {
 
     public int getTaskListSize(){
         return taskList.size();
+    }
+
+    public void removeTask(int index){
+        taskList.remove(taskList.get(index));
     }
 }

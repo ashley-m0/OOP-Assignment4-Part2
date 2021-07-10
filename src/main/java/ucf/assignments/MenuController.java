@@ -21,6 +21,7 @@ import java.time.LocalDate;
 
 public class MenuController {
 
+    private List  mainList = new List();
 
     //Remove Task
         @FXML private ChoiceBox removeSelectedTask;
@@ -59,9 +60,14 @@ public class MenuController {
         public void okButtonPressed(ActionEvent actionEvent) throws IOException {
             Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
             Scene menuScene = new Scene(root);
-
+            AppController myAppController = new AppController();
+            myAppController.setAppMainList(mainList);
             Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
             window.setScene(menuScene);
             window.show();
         }
+
+    public void setMenuMainList(List newList){
+        mainList = newList;
+    }
 }

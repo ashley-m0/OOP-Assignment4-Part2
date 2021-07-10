@@ -11,12 +11,12 @@ public class Task {
 
     private LocalDate dueDate;
     private String description;
-    private boolean completed;
+    private String completed;
 
     public Task(LocalDate dueDate, String description){
         this.dueDate = dueDate;
         this.description = description;
-        this.completed = false;
+        this.completed = "Not Completed";
     }
 
     //getter for due date
@@ -39,13 +39,13 @@ public class Task {
     }
 
     //getter for completed
-    public boolean getCompleted(){
+    public String getCompleted(){
         return completed;
     }
 
     //setter for completed
-    public void setCompleted(boolean completed){
-        this.completed = completed;
+    public void setCompleted(){
+        this.completed = "Completed";
     }
 
 }
