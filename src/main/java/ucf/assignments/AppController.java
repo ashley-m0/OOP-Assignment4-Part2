@@ -17,6 +17,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class AppController {
 
     private List  mainList = new List();
 
-    @FXML private ChoiceBox TaskSelected;
+
     @FXML private TableView<Task> taskTable;
     @FXML private TableColumn<Task, String> completedColumn;
     @FXML private TableColumn<Task, LocalDate> dueDateColumn;
@@ -39,6 +40,8 @@ public class AppController {
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Task, String>("description"));
 
         taskTable.setItems(getTaskInfo());
+        taskTable.setEditable(true);
+        //descriptionColumn.setCellValueFactory(TextFieldTableCell.forTableColumn());
     }
 
     public ObservableList<Task> getTaskInfo() {
@@ -110,14 +113,13 @@ public class AppController {
         //set TreeView's root to the root we made
     }
 
-    public void taskCompletedButton(ActionEvent actionEvent) {
-        //takes in the list selected by the user
-        //takes in the description selected by the user
 
-        //find list
-        //find task
+    //Edit Table
+    public void dueDateEditAsserted(TableColumn.CellEditEvent editCell) {
+        //Task taskSelected = taskTable.getSelectedModel().getSelectedItem();
+    }
 
-        //set task's complete variable to true
+    public void descriptionEditAsserted(TableColumn.CellEditEvent editCell) {
     }
 
 

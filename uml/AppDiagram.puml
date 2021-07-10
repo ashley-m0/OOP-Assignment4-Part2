@@ -29,13 +29,6 @@ class List{
 
 class menuController{
 
-    - editDescription: boolean
-    - ETEditedDescription: TextField
-    - ETUserMessage: TextArea
-    - ATSelectedList: ChoiceBox
-    - ATSelectedDate: DatePicker
-    - ATEnteredDescription: TextField
-    - ATUserMessage: TextArea
     - ILFilePath: TextField
     - ILUserMessage: TextArea
     - SLFilePath: TextField
@@ -44,10 +37,6 @@ class menuController{
     - refresh()
 
     + okButtonPressed(actionEvent: ActionEvent)
-    + editDescriptionChecked(actionEvent: ActionEvent)
-    + editDueDateChecked(actionEvent: ActionEvent)
-    + updateTaskButtonPressed(actionEvent: ActionEvent)
-    + addTaskButtonPressed(actionEvent: ActionEvent)
     + scanListButtonPressed(actionEvent: ActionEvent)
     + saveListButtonPressed(actionEvent: ActionEvent)
 }

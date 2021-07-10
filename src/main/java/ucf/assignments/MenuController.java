@@ -21,54 +21,6 @@ import java.time.LocalDate;
 
 public class MenuController {
 
-    //transfer mainList
-
-
-    //Edit Task Tab
-        private boolean editDescription;
-        private boolean editDueDate;
-        @FXML private ChoiceBox ETSelectedTask;
-        @FXML private DatePicker ETSelectedDate;
-        @FXML private TextField ETEditedDescription;
-        @FXML private TextArea ETUserMessage;
-
-        public void editDescriptionChecked(ActionEvent actionEvent) {
-            //set editDescription to equal true
-        }
-
-        public void editDateChecked(ActionEvent actionEvent) {
-            //set editDueDate to equal true
-        }
-
-        public void updateTaskButtonPressed(ActionEvent actionEvent) {
-            //if editDescription or editDueDate is true
-                //take in the list selected
-                //find the index of the array of the selected list and store it
-                //take in the task selected
-                //find the index of the task in the list and store it
-                //if editDescription is true
-                    //set the description of the task to equal the input from the textField
-                //if editDueDate is true
-                    //set the due date of the task to equal the input from the datePicker
-            //else
-                //display in textArea that the user needs to select at least one option
-        }
-
-    //Add Task Tab
-        @FXML private DatePicker ATSelectedDate;
-        @FXML private TextField ATEnteredDescription;
-        @FXML private TextArea ATUserMessage;
-        public void addTaskButtonPressed(ActionEvent actionEvent) {
-            //take in text from textField
-            String newDescription = ATEnteredDescription.getText();
-            LocalDate newDueDate = ATSelectedDate.getValue();
-            //search if the task has already present in the selected list
-            int search = mainList
-            //if search equals -1 (not found)
-                //create and add task to the List
-            //else
-                //display in TextArea that the task has already been added
-        }
 
     //Remove Task
         @FXML private ChoiceBox removeSelectedTask;
