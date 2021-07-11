@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,10 +19,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 
-public class AppController {
+public class AppController implements Initializable {
 
     private List  mainList = new List();
     private int viewControl = 0;
@@ -33,25 +36,21 @@ public class AppController {
     @FXML private DatePicker dueDateField;
     @FXML private TextField descriptionField;
 
-
-    @FXML private void initialize(){
-        //call updateTable function
-        updateTable();
-        //set table to be editable and all for items to be selected
-        taskTable.setEditable(true);
-        taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    }
-
     public void menuButtonPressed(ActionEvent actionEvent) throws IOException {
         //switch screen to the Menu window
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Menu.fxml"));
-        Parent AppParent = loader.load();
+        Parent tableViewParent = loader.load();
 
-        Scene tableViewScene = new Scene(AppParent);
-        MenuController myMenuController = loader.getController();
-        myMenuController.setMenuMainList(mainList);
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene tableViewScene = new Scene(tableViewParent);
+
+        //access the controller and call a method
+        MenuController controller = loader.getController();
+        controller.setMenuMainList(mainList);
+
+        //This line gets the Stage information
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
         window.setScene(tableViewScene);
         window.show();
     }
@@ -95,8 +94,16 @@ public class AppController {
         ObservableList<Task> selectedTasks = taskTable.getSelectionModel().getSelectedItems();
         for (Task task: selectedTasks)
         {
-            int searchIndex = mainList.findTask(task.getDescription());
-            mainList.getTask(searchIndex).setCompleted();
+            task.setCompleted(true);
+        }
+        updateTable();
+    }
+
+    public void incompleteTaskAsserted(ActionEvent actionEvent) {
+        ObservableList<Task> selectedTasks = taskTable.getSelectionModel().getSelectedItems();
+        for (Task task: selectedTasks)
+        {
+            task.setCompleted(false);
         }
         updateTable();
     }
@@ -108,6 +115,11 @@ public class AppController {
             int searchIndex = mainList.findTask(task.getDescription());
             mainList.removeTask(searchIndex);
         }
+        updateTable();
+    }
+
+    public void clearListButtonAsserted(ActionEvent actionEvent) {
+        clearList();
         updateTable();
     }
 
@@ -124,7 +136,9 @@ public class AppController {
     }
 
     public void setAppMainList(List newList){
-        mainList = newList;
+        for(int i = 0; i < newList.getTaskListSize(); i++){
+            mainList.addTask(newList.getTask(i).getDueDate(), newList.getTask(i).getDescription());
+        }
     }
 
     public void updateTable(){
@@ -157,5 +171,22 @@ public class AppController {
         //return ObservableList
         return listInfo;
     }
+
+    public void clearList(){
+        for(int i = (mainList.getTaskListSize() - 1); i >= 0 ; i--){
+            mainList.removeTask(i);
+        }
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //call updateTable function
+        updateTable();
+        //set table to be editable and all for items to be selected
+        taskTable.setEditable(true);
+        taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
+
 
 }

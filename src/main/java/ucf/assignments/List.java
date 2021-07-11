@@ -17,6 +17,8 @@ public class List {
         Task newTask = new Task(dueDate, description);
         //add task to ArrayList
         taskList.add(newTask);
+        String date = taskList.get(taskList.size() - 1).getDueDate().toString();
+        System.out.println(taskList.get(taskList.size() - 1).getDescription() + date);
     }
 
     public Task getTask(int index){

@@ -44,8 +44,13 @@ public class Task {
     }
 
     //setter for completed
-    public void setCompleted(){
-        this.completed = "Completed";
+    public void setCompleted(boolean complete){
+        if (complete){
+            this.completed = "Completed";
+        } else {
+            this.completed = "Not Completed";
+        }
+
     }
 
 }
