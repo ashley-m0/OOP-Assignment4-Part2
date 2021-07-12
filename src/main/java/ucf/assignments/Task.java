@@ -9,22 +9,22 @@ import java.time.LocalDate;
 
 public class Task {
 
-    private LocalDate dueDate;
+    private String dueDate;
     private String description;
     private String completed;
 
-    public Task(LocalDate dueDate, String description){
+    public Task(String completed, String dueDate, String description){
+        this.completed = completed;
         this.dueDate = dueDate;
         this.description = description;
-        this.completed = "Not Completed";
     }
 
     //getter for due date
-    public LocalDate getDueDate(){
+    public String getDueDate(){
         return dueDate;
     }
 
-    public void setDueDate(LocalDate dueDate){
+    public void setDueDate(String dueDate){
         this.dueDate = dueDate;
     }
 

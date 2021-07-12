@@ -7,36 +7,56 @@ class App{
 }
 
 class AppController{
-    - mainList: ArrayList<List>
-    - taskSelected: ChoiceBox
-    - listScreen: TreeView<String>
-    - initialize()
+    - mainList: List
+    - viewControl: int
+    - taskTable: TableView<Task>
+    - completedColumn: TableColumn<Task, String>
+    - dueDateColumn: TableColumn<Task, String>
+    - descriptionColumn: TableColumn<Task, String>
+    - dueDateField: DatePicker
+    - description: TextField
 
-    + menuButtonPressed(actionEvent: ActionEvent)
-    + taskCompletedButtonPressed(actionEvent: ActionEvent)
     + showAllTasksSelected(actionEvent: ActionEvent)
     + showCompletedTasksSelected(actionEvent: ActionEvent)
     + showUncompletedTasksSelected(actionEvent: ActionEvent)
+    + menuButtonPressed(actionEvent: ActionEvent)
+    + dueDateEditAsserted(actionEvent: ActionEvent)
+    + descriptionEditAsserted(actionEvent: ActionEvent)
+    + completeTaskButtonPressed(actionEvent: ActionEvent)
+    + incompleteTaskButtonPressed(actionEvent: ActionEvent)
+    + removeTaskButtonPressed(actionEvent: ActionEvent)
+    + clearListButtonPressed(actionEvent: ActionEvent)
+    + createTaskButtonPressed(actionEvent: ActionEvent)
+    + createNewTask(newDueDate: String, newDescription: String)
+    + setTasksComplete(selectedTasks ObservableList<Task>, complete: boolean)
+    + clearList()
+    + setAppMainList(newList: List)
+    + updateTable()
+    + getAllTaskInfo()
+    + initialize()
 
 }
 
 class List{
     - taskList: ArrayList<Task>
 
-    + addTask(dueDate: String, description: String)
+    + addTask(completed: String, dueDate: String, description: String)
     + getTask(index: int): Task
+    + findTask(description: String): int
+    + getTaskListSize(): int
+    + removeTask(index: int)
 }
 
 class menuController{
 
+    - mainList: List
     - ILFilePath: TextField
     - ILUserMessage: TextArea
     - SLFilePath: TextField
     - SLUserMessage: TextArea
-    - initialize()
-    - refresh()
 
     + okButtonPressed(actionEvent: ActionEvent)
+    + setMenuMainList(newList: List)
     + scanListButtonPressed(actionEvent: ActionEvent)
     + saveListButtonPressed(actionEvent: ActionEvent)
 }
@@ -44,7 +64,7 @@ class menuController{
 class Task{
     - dueDate: String
     - description: String
-    - completed: boolean
+    - completed: String
 
     + getDueDate(): String
     + setDueDate(dueDate: String)

@@ -12,13 +12,11 @@ public class List {
 
     private ArrayList<Task> taskList = new ArrayList<>();
 
-    public void addTask(LocalDate dueDate, String description){
+    public void addTask(String completed, String dueDate, String description){
         //create new task variable from input information
-        Task newTask = new Task(dueDate, description);
+        Task newTask = new Task(completed, dueDate, description);
         //add task to ArrayList
         taskList.add(newTask);
-        String date = taskList.get(taskList.size() - 1).getDueDate().toString();
-        System.out.println(taskList.get(taskList.size() - 1).getDescription() + date);
     }
 
     public Task getTask(int index){
